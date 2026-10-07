@@ -8,9 +8,9 @@ def test_add():
 def test_sub():
     assert subtract(20,10) == 10
 
-# def test_mul():
-#     assert multiply(10,20) == 200
+def test_mul():
+    assert multiply(10,20) == 200
     
 
-# def test_div():
-#     assert divide(20,10) == 2
+def test_div():
+    assert divide(20,10) == 2
