@@ -45,8 +45,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: run test case
-        run: pytest --cov==cal --cov-report=term
-        
+        run: pytest --cov=cal --cov-report=term
+
       - name: print message
         run: echo "build completed successfully"
         
