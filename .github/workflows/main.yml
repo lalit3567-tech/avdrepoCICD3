@@ -38,17 +38,18 @@ jobs:
   build-job:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code
-        uses: actions/checkout@v2
+      # - name: checkout code
+      #   uses: actions/checkout@v2
 
       - name: install required package
         run: pip install -r requirements.txt
 
       - name: run test case
         run: pytest --cov==cal --cov-report=term
+
       - name: print message
         run: echo "build completed successfully"
-        
+
   deploy-job:
     needs: build-job
     runs-on: ubuntu-latest
