@@ -9,11 +9,11 @@ jobs:
   run-python-code:
     runs-on: ubuntu-latest
     steps:
-      -name: checkout code
-      uses: actions/checkout@v2
+      - name: checkout code
+        uses: actions/checkout@v2
 
-      -name: run python
-      run: python data.py
+      - name: run python
+        run: python data.py
 
 
 
