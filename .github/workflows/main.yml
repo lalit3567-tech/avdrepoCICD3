@@ -18,6 +18,9 @@ jobs:
       # - name: install required library
       #   run: pip install pandas -r requirements.txt
 
+      - name: install required package
+        run: pip install pandas -r requirements.txt
+
       # - name: run python
       #   run: python data.py
 
