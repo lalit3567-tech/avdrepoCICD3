@@ -1,3 +1,31 @@
+# # name: python external library
+# name: quality gateway implementation
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   run-python-code:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: checkout code
+#         uses: actions/checkout@v2
+
+#       - name: install required package
+#         run: pip install -r requirements.txt
+
+#       - name: run test case
+#         run: pytest --cov==cal --cov-report=term
+
+#       # - name: install required library
+#       #   run: pip install pandas -r requirements.txt
+
+#       # - name: run python
+#       #   run: python data.py
+
+
 # name: python external library
 name: quality gateway implementation
 
@@ -7,7 +35,7 @@ on:
       - main
 
 jobs:
-  run-python-code:
+  build-job:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
@@ -18,14 +46,26 @@ jobs:
 
       - name: run test case
         run: pytest --cov==cal --cov-report=term
+      - name: print message
+        run: echo "build completed successfully"
+        
+  deploy-job:
+    needs: build-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: print message
+        run: "echo deploy to production"
+            
 
       # - name: install required library
       #   run: pip install pandas -r requirements.txt
-
-   
-
+      
       # - name: run python
       #   run: python data.py
+
+
+
+
 
 
 
